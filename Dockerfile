@@ -6,6 +6,8 @@ ARG GID=1000
 RUN groupadd -g $GID dev \
  && useradd -m -u $UID -g $GID dev
 
+RUN sed -i 's/^Components: main$/Components: main non-free-firmware/' /etc/apt/sources.list.d/debian.sources
+
 RUN apt update && apt install -y \
 	build-essential \
 	live-build \
@@ -21,6 +23,7 @@ RUN apt update && apt install -y \
 	kmod \
 	libdw-dev:native \
 	python3:native \
+	firmware-realtek \
 	git \
 	vim \
 	sudo \
