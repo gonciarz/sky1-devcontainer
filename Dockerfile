@@ -16,7 +16,7 @@ RUN apt update && apt install -y \
 	flex \
 	libelf-dev \
 	libssl-dev \
-    	debhelper \
+	debhelper \
 	dh-exec \
 	rsync \
 	cpio \
@@ -24,6 +24,7 @@ RUN apt update && apt install -y \
 	libdw-dev:native \
 	python3:native \
 	firmware-realtek \
+	parted \
 	git \
 	vim \
 	sudo \

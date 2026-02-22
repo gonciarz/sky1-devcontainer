@@ -19,7 +19,6 @@ docker run -v .:/workspace --rm -it --platform linux/arm64 myimage:arm64
 	git clone https://github.com/Sky1-Linux/sky1-linux-build
 	git clone https://github.com/Sky1-Linux/sky1-image-build
 	git clone https://github.com/Sky1-Linux/linux-sky1
-	git clone https://github.com/Sky1-Linux
 	```
 
 2. Build and install firmware
@@ -32,8 +31,26 @@ docker run -v .:/workspace --rm -it --platform linux/arm64 myimage:arm64
 3. Build a kernel
 
 	```shell
-	sky1-linux-build> ./scripts/prepare-source.sh 6.18.9
-	sky1-linux-build> ./scripts/build-debs.sh 6.18.9 1 sky1
+	sky1-linux-build> ./scripts/prepare-source.sh 6.18.13
+	sky1-linux-build> ./scripts/build-debs.sh 6.18.13 1 sky1
 	```
+
+
+
+4. Build an image
+
+Currently in order to create an image a container must be run in privileged mode.
+
+	```shell
+	docker run -v .:/workspace --rm -it --privileged --platform linux/arm64 myimage:arm64
+	```
+
+	```shell
+	sky1-image-build> sudo ./scripts/build.sh gnome desktop iso
+	sky1-image-build> sudo ./scripts/build.sh kde developer iso latest
+	sky1-image-build> sudo ./scripts/build.sh none server image
+	```
+
+
 
 
