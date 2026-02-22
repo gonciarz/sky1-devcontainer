@@ -4,11 +4,11 @@ arm64 docker container that helps to build sky1 artifacts.
 
 ## Build docker image and run
 
-	```shell
-	docker run --rm --privileged tonistiigi/binfmt --install all
-	docker buildx build --platform linux/arm64 -t myimage:arm64 --load .
-	docker run -v .:/workspace --rm -it --platform linux/arm64 myimage:arm64
-	```
+```shell
+docker run --rm --privileged tonistiigi/binfmt --install all
+docker buildx build --platform linux/arm64 -t myimage:arm64 --load .
+docker run -v .:/workspace --rm -it --platform linux/arm64 myimage:arm64
+```
 
 ## Instruction
 
