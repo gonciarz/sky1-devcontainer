@@ -39,7 +39,7 @@ docker run -v .:/workspace --rm -it --platform linux/arm64 myimage:arm64
 
 4. Build an image
 
-Currently in order to create an image a container must be run in privileged mode.
+Currently in order to create an image a container must run in privileged mode.
 
 	```shell
 	docker run -v .:/workspace --rm -it --privileged --platform linux/arm64 myimage:arm64
